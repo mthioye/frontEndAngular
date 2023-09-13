@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ListPersonneComponent implements OnInit{
 
-  personnes: Personne[];
+  personnes: Personne[]=[];
 
   constructor(private personneService: PersonneService,
     private router: Router) { }
@@ -36,7 +36,7 @@ export class ListPersonneComponent implements OnInit{
   deletePersonne(id: number){
     this.personneService.deletePersonne(id).subscribe( data => {
       console.log(data);
-      this.getPeronnes();
+      this.getPersonnes();
     })
   }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PersonneService } from '../personne.service';
 import { Personne } from '../personne';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -10,11 +10,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UpdatePersonneComponent implements OnInit {
 
-  id: number;
-  personne: Personne = new Personne();
+  id: number=0;
+  personne: Personne;// = new Personne();
   constructor(private personneService: PersonneService,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router) { 
+      this.personne = new Personne();
+    }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
