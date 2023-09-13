@@ -1,0 +1,30 @@
+<div class = "row">
+    <h2> Lite personne</h2>
+</div>
+
+<table class = "table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th> First Name</th>
+            <th> Last Name </th>
+            <th> Address</th>
+            <th> birthDay</th>
+            <th> phone</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let personne of personnes" >
+            <td> {{ personne.firstName }} </td>
+            <td> {{ personne.lastName }} </td>
+            <td> {{ personne.address }} </td>
+            <td> {{ personne.birthDay }} </td>
+            <td> {{ personne.phone }} </td>
+            <td>
+                <button (click) = "updatePersonne(personne.id)" class = "btn btn-primary"> Update</button>
+                <button (click) = "deletePersonne(personne.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "PersonneDetails(personne.id)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
